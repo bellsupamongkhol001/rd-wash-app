@@ -1,0 +1,103 @@
+<div class="container">
+  <!-- 🔷 HEADER -->
+  <header class="header">
+    <h2><i class="fas fa-warehouse"></i> Inventory Management</h2>
+  </header>
+  
+  <!-- 🔍 SEARCH AND ACTION BUTTONS -->
+  <section class="data-section">
+    <div class="header-controls">
+      <button id="btnExportReport" class="btn btn-export">
+        <i class="fas fa-file-export"></i> Export 
+      </button>
+    </div>
+  </section>
+
+  <!-- 🧥 UNIFORM BASE CARDS -->
+  <section class="card-grid section-box" id="uniformBaseList"></section>
+
+  <!-- 🔢 PAGINATION -->
+  <div id="pagination" class="pagination"></div>
+</div>
+
+<!-- ==================== MODALS ==================== -->
+
+<!-- 📋 CODE LIST MODAL -->
+<div class="modal hidden" id="codeListModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-list"></i> Uniform Code Details</h3>
+    </div>
+    <div class="modal-body">
+      <div class="table-panel">
+        <table class="detail-table">
+          <thead>
+            <tr>
+              <th>Uniform Code</th>
+              <th>Employee ID</th>
+              <th>Employee Name</th>
+              <th>Department</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="codeListBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-danger" onclick="closeCodeListModal()">
+        <i class="fas fa-times"></i> Close
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ✅ ASSIGN MODAL -->
+<div class="modal hidden" id="assignModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-user-plus"></i> Assign Uniform</h3>
+    </div>
+    <form id="assignForm" class="modal-body">
+      <p id="assignUniformInfo" class="form-highlight"></p>
+      <label for="assignUniformCode">Uniform Code</label>
+      <input type="text" id="assignUniformCode" readonly />
+      <label for="assignEmployeeId" class="required">Employee ID</label>
+      <input type="text" id="assignEmployeeId" required />
+      <label for="assignEmployeeName">Employee Name</label>
+      <input type="text" id="assignEmployeeName" readonly />
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-success">
+          <i class="fas fa-check"></i> Confirm
+        </button>
+        <button type="button" class="btn btn-danger" onclick="closeAssignModal()">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ➕ ADD CODE MODAL -->
+<div class="modal hidden" id="codeModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-plus-circle"></i> Add Uniform Code</h3>
+    </div>
+    <form id="codeForm" class="modal-body">
+      <input type="hidden" id="addCodeUniformId" />
+      <label for="addUniformCode">Uniform Code</label>
+      <input type="text" id="addUniformCode" required />
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-success">
+          <i class="fas fa-save"></i> Save
+        </button>
+        <button type="button" class="btn btn-danger" onclick="closeAddCodeModal()">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

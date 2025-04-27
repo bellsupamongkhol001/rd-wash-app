@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RD-WASH</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- ✅ CSS files after build -->
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="logo">🧼 RD-WASH</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#" data-page="wash" class="nav-link"><i class="fas fa-soap"></i> Wash</a></li>
+        <li><a href="#" data-page="employee" class="nav-link"><i class="fas fa-user"></i> Employee</a></li>
+        <li><a href="#" data-page="uniform" class="nav-link"><i class="fas fa-tshirt"></i> Uniform</a></li>
+        <li><a href="#" data-page="inventory" class="nav-link"><i class="fas fa-boxes"></i> Inventory</a></li>
+      </ul>
+    </nav>
+    <div id="sidebarClock" class="sidebar-clock"></div>
+  </aside>
+
+  <div class="main-content">
+    <main id="main-content"></main>
+  </div>
+
+  <div id="globalLoader" class="linear-loader" style="display: none;">
+    <div class="loader-bar"></div>
+    <p id="loaderMessage">Loading...</p>
+  </div>
+
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="spinner"></div>
+    <p class="loading-text">Loading...</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

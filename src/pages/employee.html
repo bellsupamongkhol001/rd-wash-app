@@ -1,0 +1,82 @@
+<div class="container">
+
+  <header class="header">
+    <h2><i class="fas fa-people-roof"></i> Employee Management</h2>
+  </header>
+
+  <section class="data-section">
+    <div class="header-controls">
+      <input
+        type="text"
+        id="searchEmployee"
+        placeholder="Search by ID or Name 🔎"
+        aria-label="Search Employee"
+      />
+      <button type="button" class="btn btn-add">
+        <i class="fas fa-user-plus"></i> Add Employee
+      </button>
+      <button type="button" class="btn btn-import">
+        <i class="fas fa-file-import"></i> Import CSV
+      </button>
+      <button type="button" class="btn btn-export">
+        <i class="fas fa-file-export"></i> Export CSV
+      </button>
+    </div>
+  </section>
+
+  <section class="main-table section-box">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th><i class="fas fa-id-badge"></i> ID</th>
+            <th><i class="fas fa-user"></i> Name</th>
+            <th><i class="fas fa-building-user"></i> Department</th>
+            <th><i class="fas fa-image"></i> Photo</th>
+            <th><i class="fas fa-cogs"></i> Actions</th>
+          </tr>
+        </thead>
+        <tbody id="employeeTableBody">
+          </tbody>
+      </table>
+    </div>
+    <div id="pagination" class="pagination"></div>
+  </section>
+
+  <div class="modal hidden" id="employeeFormModal" role="dialog">
+    <form class="modal-content" id="employeeForm" novalidate>
+      <h3 id="modalTitle"><i class="fas fa-user-plus"></i> Add Employee</h3>
+      <div class="modal-body">
+
+        <div class="modal-left">
+          <div class="drop-zone" id="dropZone">
+            <p><i class="fas fa-cloud-upload-alt"></i> Drag & Drop or Click to select image</p>
+            <input type="file" id="employeePhoto" accept="image/*" hidden />
+            <img id="previewPhoto" class="preview-thumb" style="display: none;" />
+          </div>
+        </div>
+
+        <div class="modal-right">
+          <label for="employeeId"><i class="fas fa-id-card"></i> ID</label>
+          <input type="text" id="employeeId" required placeholder="Enter ID" />
+
+          <label for="employeeName"><i class="fas fa-user"></i> Name</label>
+          <input type="text" id="employeeName" required placeholder="Enter Name" />
+
+          <label for="employeeDept"><i class="fas fa-sitemap"></i> Department</label>
+          <input type="text" id="employeeDept" required placeholder="Enter Department" />
+
+          <div class="modal-actions">
+            <button type="submit" class="btn btn-success btn-save">
+              <i class="fas fa-save"></i> Save
+            </button>
+            <button type="button" class="btn btn-danger btn-cancel" id="cancelBtn">
+              <i class="fas fa-times"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
